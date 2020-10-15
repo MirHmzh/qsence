@@ -3,7 +3,7 @@
 <canvas id="canvas"></canvas>
 <img src="" id="image" alt="">
 <script>
-	var socket = io('localhost:3000');
+	var socket = io('ex-school:3000');
 	socket.on('server_absen', data => {
 		alert(data+' absen');
 	});
