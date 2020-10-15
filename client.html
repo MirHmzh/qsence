@@ -12,7 +12,7 @@
 <script>
 const qrcodes = window.qrcode;
 
-const socket = io('https://ex-school.com:3000');
+// const socket = io('https://ex-school.com:3000');
 
 const video = document.createElement("video");
 const canvasElement = document.getElementById("qr-canvas");
@@ -32,7 +32,7 @@ let scanning = false;
 qrcodes.callback = res => {
   if (res) {
     alert(res+' absen')
-    socket.emit('client_absen', res)
+    // socket.emit('client_absen', res)
     // outputData.innerText = res;
     // scanning = false;
 
