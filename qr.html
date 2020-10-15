@@ -1,7 +1,20 @@
-<script src="assets/js/socket.io.js"></script>
-<!-- <script src="assets/js/jsqr.js"></script> -->
-<script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js" type="text/javascript" charset="utf-8"></script>
-<div id="container">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QR Code Scanner</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+  </head>
+
+  <body>
+    <div id="container">
+      <h1>QR Code Scanner</h1>
+
+      <a id="btn-scan-qr">
+        <img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg">
+      <a/>
 
       <canvas hidden="" id="qr-canvas"></canvas>
 
@@ -9,10 +22,11 @@
         <b>Data:</b> <span id="outputData"></span>
       </div>
     </div>
-<script>
-const qrcodes = window.qrcode;
+  </body>
+</html>
 
-// const socket = io('https://ex-school.com:3000');
+<script type="text/javascript" charset="utf-8">
+	const qrcode = window.qrcode;
 
 const video = document.createElement("video");
 const canvasElement = document.getElementById("qr-canvas");
@@ -20,39 +34,32 @@ const canvas = canvasElement.getContext("2d");
 
 const qrResult = document.getElementById("qr-result");
 const outputData = document.getElementById("outputData");
+const btnScanQR = document.getElementById("btn-scan-qr");
 
 let scanning = false;
 
-// socket.on('connect', () => {
-// 	socket.emit('client_absen', 123123)
-// 	console.log('connected')
-// });
-
-
-qrcodes.callback = res => {
+qrcode.callback = res => {
   if (res) {
-    alert(res+' absen')
-    // socket.emit('client_absen', res)
-    // outputData.innerText = res;
-    // scanning = false;
+    outputData.innerText = res;
+    scanning = false;
 
-    // video.srcObject.getTracks().forEach(track => {
-    //   track.stop();
-    // });
+    video.srcObject.getTracks().forEach(track => {
+      track.stop();
+    });
 
-    // qrResult.hidden = false;
-    // canvasElement.hidden = true;
-    // btnScanQR.hidden = false;
+    qrResult.hidden = false;
+    canvasElement.hidden = true;
+    btnScanQR.hidden = false;
   }
 };
 
-// btnScanQR.onclick = () => {
+btnScanQR.onclick = () => {
   navigator.mediaDevices
     .getUserMedia({ video: { facingMode: "environment" } })
     .then(function(stream) {
       scanning = true;
       qrResult.hidden = true;
-      // btnScanQR.hidden = true;
+      btnScanQR.hidden = true;
       canvasElement.hidden = false;
       video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
       video.srcObject = stream;
@@ -60,7 +67,7 @@ qrcodes.callback = res => {
       tick();
       scan();
     });
-// };
+};
 
 function tick() {
   canvasElement.height = video.videoHeight;
@@ -72,10 +79,9 @@ function tick() {
 
 function scan() {
   try {
-    qrcodes.decode();
+    qrcode.decode();
   } catch (e) {
     setTimeout(scan, 300);
   }
 }
-
 </script>
