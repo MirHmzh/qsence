@@ -13,7 +13,7 @@
       <h1>QR Code Scanner</h1>
 
       <a id="btn-scan-qr">
-        <img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg">
+
       <a/>
 
       <canvas hidden="" id="qr-canvas"></canvas>
@@ -53,7 +53,7 @@ qrcode.callback = res => {
   }
 };
 
-btnScanQR.onclick = () => {
+// btnScanQR.onclick = () => {
   navigator.mediaDevices
     .getUserMedia({ video: { facingMode: "environment" } })
     .then(function(stream) {
@@ -67,7 +67,7 @@ btnScanQR.onclick = () => {
       tick();
       scan();
     });
-};
+// };
 
 function tick() {
   canvasElement.height = video.videoHeight;
