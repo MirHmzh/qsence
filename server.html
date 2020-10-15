@@ -1,0 +1,19 @@
+<script src="assets/js/socket.io.js"></script>
+<script src="assets/js/qrcode.js"></script>
+<canvas id="canvas"></canvas>
+<img src="" id="image" alt="">
+<script>
+	var socket = io('localhost:3000');
+	socket.on('server_absen', data => {
+		alert(data+' absen');
+	});
+	new QrCodeWithLogo({
+	  canvas: document.getElementById("canvas"),
+	  content: "amirudeen",
+	  width: 500,
+	  image: document.getElementById("image"),
+	  logo: {
+	    src: "assets/img/maskot.png"
+	  }
+	}).toImage();
+</script>
