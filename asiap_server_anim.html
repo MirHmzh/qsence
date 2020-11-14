@@ -47,7 +47,7 @@
 		border-radius: 12px;
 		background: transparent;
 		overflow: hidden;
-		box-shadow: 2px 2px 10px rgb(110, 110, 110);
+		box-shadow: 2px 2px 10px rgba(110, 110, 110, 0.2);
 	}
 	.card-body{
 		padding:0;
@@ -131,16 +131,16 @@
 	</nav>
 
 	<!-- Elemen Background -->
-	<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; ">
-		<img src="assets/img/bbl1.png" style="position: absolute; top:-20%; left: -10%;" alt="">
-		<img src="assets/img/bbl2.png" style="position: absolute; top:-20%; right: 0;" alt="">
-		<img src="assets/img/bbl3.png" style="position: absolute; top:-30%; right: 30%;" alt="">
-		<img src="assets/img/bbl4.png" style="position: absolute; right: 20%; top:10%;" alt="">
-		<img src="assets/img/bbl5.png" style="position: absolute; left: 20%; top:5%;" alt="">
-		<img src="assets/img/bbl6.png" style="position: absolute; right: 0; bottom:0;" alt="">
-		<img src="assets/img/bbl7.png" style="position: absolute; right: 50%; bottom:-15%;" alt="">
-		<img src="assets/img/bbl3.png" style="position: absolute; width: 20%; left:-5%; bottom:0;" alt="">
-		<img src="assets/img/bbl2.png" style="position: absolute; right: 20%; bottom:-30%;" alt="">
+	<div id="moving-bg" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; ">
+		<img class="moving1" src="assets/img/bbl1.png" style="position: absolute; left: -10%;" alt="">
+		<img class="moving1" src="assets/img/bbl2.png" style="position: absolute; right: 0;" alt="">
+		<img class="moving2" src="assets/img/bbl3.png" style="position: absolute; right: 30%;" alt="">
+		<img class="moving2" src="assets/img/bbl4.png" style="position: absolute; right: 20%; top:10%;" alt="">
+		<img class="moving3" src="assets/img/bbl5.png" style="position: absolute; left: 20%; top:5%;" alt="">
+		<img class="moving3" src="assets/img/bbl6.png" style="position: absolute; right: 0; bottom:0;" alt="">
+		<img class="moving4" src="assets/img/bbl7.png" style="position: absolute; right: 50%; bottom:-15%;" alt="">
+		<img class="moving4" src="assets/img/bbl3.png" style="position: absolute; width: 20%; left:-5%; bottom:0;" alt="">
+		<img class="moving5" src="assets/img/bbl2.png" style="position: absolute; right: 20%; bottom:-10%;" alt="">
 	</div>
 
 	<div class="container">
@@ -227,6 +227,62 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
+	let move = 1;
+	let rand = 0;
+	let neg = [
+		{
+			'top' : '-=20%',
+			'left' : '-=20%',
+		},
+		{
+			'left' : '-=20%',
+			'right' : '-=20%',
+		},
+		{
+			'right' : '-=20%',
+			'bottom' : '-=20%',
+		},
+		{
+			'bottom' : '-=20%',
+			'left' : '-=20%',
+		}
+	];
+	let pos = [
+		{
+			'top' : '+=20%',
+			'left' : '+=20%',
+		},
+		{
+			'left' : '+=20%',
+			'right' : '+=20%',
+		},
+		{
+			'right' : '+=20%',
+			'bottom' : '+=20%',
+		},
+		{
+			'bottom' : '+=20%',
+			'left' : '+=20%',
+		}
+	];
+	function movebg(){
+		$.each($('#moving-bg'), function(index, val) {
+			if (move == 1) {
+				random = Math.floor(Math.random() * 4);
+				$(val).animate(pos[random], 5000, 'swing');
+				move = 2;
+				console.log(random);
+			}else{
+				$(val).animate(neg[random], 5000, 'swing');
+				move = 1;
+				console.log(random);
+			}
+		});
+	}
+	movebg();
+	setInterval(() => {
+		movebg();
+	}, 5000);
 	$('#nav-shadow').position($('#active-tab').position());
 	$('#nav-shadow').width($('#active-tab').width());
 	$('.nav-link').click((e) => {
