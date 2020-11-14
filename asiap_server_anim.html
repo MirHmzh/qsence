@@ -226,25 +226,12 @@
 <script>
 	$('#nav-shadow').position($('#active-tab').position());
 	$('#nav-shadow').width($('#active-tab').width());
-	// $('#nav-shadow a').text($('#active-tab a').text());
 	$('.nav-link').click((e) => {
 		let past_width = $('#active-tab').width();
 		$('#active-tab').removeAttr('id');
 		let el = e.target;
 		let parent = $(el).parent();
 		$(parent).attr('id', 'active-tab');
-
-		console.log(past_width);
-
-		// $('#nav-shadow').animate(
-		// 	$('#active-tab').position(), { duration: 100, easing: "swing"}, () => {
-		// 		$('#nav-shadow').animate(
-		// 			{ width: past_width+$('#active-tab').width().width }
-		// 		, { duration: 100, easing: "swing"}, () => {
-		// 			$('#nav-shadow').animate($('#active-tab').width());
-		// 		});
-		// });
-		console.log($('#active-tab').position());
 		$('#nav-shadow').animate(
 			{
 				width: ($('#active-tab').width()),
@@ -252,7 +239,6 @@
 				left: $('#active-tab').position().left,
 			}
 		, 200, 'swing');
-		// $('#nav-shadow a').text($('#active-tab a').text());
 		$('#main-content div')
 		.animate({
 			opacity: 0,
