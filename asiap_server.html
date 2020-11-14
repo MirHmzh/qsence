@@ -68,17 +68,79 @@
 	.tabs-animated {
 		overflow: hidden;
 	}
-
+	.profil{
+		display: none;
+		display: contents;
+	}
+	@media only screen and (min-width: 375px) {
+		.img-nav{
+			position: absolute;
+			top:4px;
+			right: 4px;
+		}
+		.navbar-light .navbar-nav .nav-link{
+			font-size: 11pt;
+		}
+		.logo{
+			width: 70%;
+		}
+		.title-card{
+			font-size: 15pt;
+		}
+		
+	}
+	@media only screen and (min-width: 768px) {
+		.profil{
+			display: block;
+			display: contents;
+		}
+		.logo{
+			width:60%;
+		}
+	}
+	@media only screen and (min-width: 992px) {
+		.profil{
+			display: contents;
+			display: none;
+		}
+		.logo{
+			width:50%;
+		}
+	}
+	@media only screen and (min-width: 1204px) {
+		.profil{
+			display: none;
+		}
+	}
 </style>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light">
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+	<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
-	</button>
+	</button> -->
 	<a class="navbar-brand" href="#">
 		<img src="assets/img/logo.png" class="logo" alt="">
 	</a>
+
+	<div class="profil">
+		<ul class="navbar-nav nav nav-tabs mr-auto mt-2 mt-lg-0" style="flex-direction:inherit; margin: auto;">
+			<li class="nav-item">
+				<a class="nav-link active" href="#checkin" data-toggle="tab">Check In</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#checkout" data-toggle="tab">Check Out</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#history" data-toggle="tab">History</a>
+			</li>
+		</ul>
+		<ul class="navbar-nav">
+			<li class="ml-2">
+				<img src="assets/img/amel.png" class="img-nav" alt="">
+			</li>
+		</ul>
+	</div>
 
 	<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		<ul class="navbar-nav nav nav-tabs mr-auto mt-2 mt-lg-0">
@@ -127,7 +189,7 @@
 						<div class="card">
 							<div class="card-body no-gutters">
 								<div class="row no-gutters">
-									<div class="col-5 bg-white p-5">
+									<div class="col-sm-5 bg-white p-5">
 										<div class="barcode d-flex justify-content-center">
 											<img src="assets/img/brcd.png" alt="">
 										</div>
@@ -135,7 +197,7 @@
 											<button class="btn btn-primary text-center" style="background: #7F8DFD;">Generate QR Code</button>
 										</div>
 									</div>
-									<div class="col-7 d-flex justify-content-center bg-blur">
+									<div class="col-sm-7 d-flex justify-content-center bg-blur">
 										<div class=" align-self-center">
 											<h1 class="text-center title-card">QR Code Check In</h1>
 											<h5 class="text-center date-card">Sabtu, 13 November 2020</h5>
