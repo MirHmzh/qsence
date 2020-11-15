@@ -193,6 +193,12 @@ footer{
 		right: 20px;
 		width: 43px;
 	}
+	#qri, .qri{
+		width: 11em;
+		height: 11em;
+		border: 1px solid rgba(0,0,0,0.5);
+		border-radius: 0.1em;
+	}
 	.logo{
 		width: 93%;
 	}
@@ -297,6 +303,12 @@ footer{
 	}
 	.name-user{
 		display: none;
+	}
+	#qri, .qri{
+		width: 11em;
+		height: 11em;
+		border: 1px solid rgba(0,0,0,0.5);
+		border-radius: 0.1em;
 	}
 	#menu{
 		margin: auto;
@@ -403,6 +415,12 @@ footer{
 	.history-date h5{
 		font-size: 13pt;
 	}
+	#qri, .qri{
+		width: 11em;
+		height: 11em;
+		border: 1px solid rgba(0,0,0,0.5);
+		border-radius: 0.1em;
+	}
 
 	.history-time h2{
 		font-size: 13pt;
@@ -466,6 +484,12 @@ footer{
 		font-size: 13pt;
 	}
 
+	#qri, .qri{
+		width: 15em;
+		height: 15em;
+		border: 1px solid rgba(0,0,0,0.5);
+		border-radius: 0.1em;
+	}
 	.history-time h2{
 		font-size: 13t;
 		font-weight: 300;
