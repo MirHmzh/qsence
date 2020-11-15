@@ -1,0 +1,417 @@
+body{
+	background: #efefef;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	font-family: 'Poppins';
+}
+.img-nav{
+	width: 52px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+.name-user{
+	font-size: 15pt;
+	font-weight: 700;
+	display: block;
+}
+.position-user{
+	display: block;
+	font-size: 11pt;
+	font-weight: 400;
+}
+.logo{
+	width:40%;
+}
+nav{
+	background-color: transparent;
+	z-index: 2;
+}
+.navbar-light .navbar-nav .nav-link{
+	font-size: 14pt;
+	font-weight: 600;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+.navbar-brand{
+	width: 35%;;
+}
+.card{
+	border-radius: 12px;
+	background: transparent;
+	overflow: hidden;
+	box-shadow: 2px 2px 10px rgba(110, 110, 110, 0.2);
+}
+.card-body{
+	padding:0;
+}
+.barcode{
+	padding: 32px;
+}
+.barcode img{
+	width: 100%;
+	height: 100%;
+}
+.bg-blur{
+	background: rgb(255 255 255 / 40%);
+}
+.date-card{
+	color: #919191;
+}
+.tabs-animated {
+	overflow: hidden;
+}
+#nav-shadow{
+	background-color: white;
+	position: absolute;
+	z-index: -1;
+	color: white;
+	border-radius: 0.2em;
+}
+#nav-shadow a{
+	color: white;
+}
+.nav-tabs{
+	border: 0;
+}
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{
+	border-color: rgba(0,0,0,0);
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
+	transition: 0.3s;
+}
+#qro{
+	display: none;
+}
+#card-history{
+	overflow-y: scroll;
+	overflow-x: auto;
+}
+#card-history::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(121, 121, 121, 0.3);
+	background-color: #F5F5F5;
+}
+
+#card-history::-webkit-scrollbar
+{
+	width: 6px;
+	height: 6px;
+	background-color: #F5F5F5;
+}
+
+#card-history::-webkit-scrollbar-thumb
+{
+	border-radius: 8px;
+	background-color: #838383;
+}
+#checkin-wrapper{
+	visibility: hidden;
+}
+.content-tab-checkout-dummy{
+	visibility: hidden;
+}
+.nav-mobile{
+	flex-direction: inherit;
+	margin: auto;
+}
+.profil{
+	display: none;
+	display: contents;
+}
+.p-qr{
+	padding: 4rem;
+}
+#btn-qr{
+	display: block;
+	margin-top: 16px;
+}
+#btn-qr-mobile{
+	display: none;
+	margin-top: 16px;
+}
+#menu ul li:hover{
+	cursor: pointer;
+}
+#active-tab a{
+	color:#000;
+}
+#cswal-title{
+	font-family: 'Poppins';
+	color: #212529;
+}
+.img-profil{
+	width: 90%;
+	border-radius: 50%;
+}
+#qri, .qri{
+	width: 15em;
+	height: 15em;
+	border: 1px solid rgba(0,0,0,0.5);
+	border-radius: 0.1em;
+}
+@media only screen and (max-width: 375px) {
+	.name-user{
+		display: none;
+	}
+	.navbar-light .navbar-nav .nav-link {
+		font-size: 10pt;
+	}
+	.img-nav{
+		position: absolute;
+		top:8px;
+		right: 20px;
+		width: 43px;
+	}
+	.logo{
+		width: 93%;
+	}
+	#menu{
+		margin: auto;
+		flex: none;
+	}
+	.p-qr{
+		padding: 0.5rem;
+	}
+	#btn-qr{
+		display: none;
+		margin-top: 16px;
+	}
+	#btn-qr-mobile{
+		margin: auto;
+		display: block;
+		margin-top: 16px;
+	}
+	#main-content{
+		padding:30px;
+	}
+	.title-card{
+		font-size: 19pt;
+	}
+	.date-card{
+		font-size: 11pt;
+	}
+	.img-profil{
+		margin: auto;
+		display: flex;
+		width: 60%;
+	}
+	.title-profil{
+		margin-top:16px;
+	}
+	.title-profil h1{
+		text-align: center;
+		font-size: 17pt;
+	}
+	.title-profil h5{
+		font-size: 14pt;
+		text-align: center;
+	}
+	.card-profil h1{
+		font-size: 15pt;
+	}
+	.card-profil h5{
+		font-weight: 400;
+		font-size: 10pt;
+	}
+
+}
+@media only screen and (min-width: 375px) {
+	.img-nav{
+		position: absolute;
+		top:8px;
+		right: 20px;
+	}
+	.navbar-light .navbar-nav .nav-link{
+		font-size: 11pt;
+	}
+	.logo{
+		width: 70%;
+	}
+	.title-card{
+		font-size: 19pt;
+	}
+	.date-card{
+		font-size: 12pt;
+	}
+	.name-user{
+		display: none;
+	}
+	#menu{
+		margin: auto;
+		flex: none;
+	}
+	.barcode{
+		padding: 0;
+	}
+	.barcode img {
+		width: 50%;
+	}
+	#btn-qr{
+		display: none;
+		margin-top: 16px;
+	}
+	#btn-qr-mobile{
+		margin: auto;
+		display: block;
+		margin-top: 16px;
+	}
+	#main-content{
+		padding:32px;
+	}
+	.p-qr{
+		padding: 3rem;
+	}
+	.img-profil{
+		margin: auto;
+		display: flex;
+		width: 40%;
+	}
+	.title-profil{
+		margin-top: 16px;
+	}
+	.title-profil h1{
+		text-align: center;
+		font-size: 20pt;
+	}
+	.title-profil h5{
+		text-align: center;
+	}
+	.card-profil h1{
+		font-size: 18pt;
+	}
+	.card-profil h5{
+		font-weight: 600;
+		font-size: 13pt;
+	}
+}
+
+@media only screen and (min-width: 576px) {
+	.date-card{
+		font-size: 12pt;
+	}
+	.title-card{
+		font-size: 18pt;
+	}
+	#menu{
+		flex: auto;
+	}
+	.img-profil{
+		margin: auto;
+		display: flex;
+		width: 100%;
+	}
+	.title-profil h1{
+		text-align: left;
+		font-size: 20pt;
+	}
+	.title-profil h5{
+		text-align: left;
+	}
+	.card-profil h1{
+		font-size: 18pt;
+	}
+	.card-profil h5{
+		font-weight: 600;
+		font-size: 13pt;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.profil{
+		display: block;
+		display: contents;
+	}
+	.logo{
+		width:60%;
+	}
+	#btn-qr{
+		display: block;
+		margin-top: 16px;
+	}
+	#btn-qr-mobile{
+		margin: auto;
+		display: none;
+		margin-top: 16px;
+	}
+	.title-card{
+		font-size: 20pt;
+	}
+	.img-profil{
+		margin: auto;
+		display: flex;
+		width: 100%;
+	}
+
+}
+@media only screen and (min-width: 992px) {
+	.profil{
+		display: none;
+	}
+	.logo{
+		width:50%;
+	}
+	#btn-qr{
+		display: block;
+		margin-top: 16px;
+	}
+	.nav{
+		flex: auto;
+	}
+	.name-user{
+		display: block;
+	}
+	.img-nav{
+		position: relative;
+		width: 52px;
+		overflow: hidden;
+		border-radius: 50%;
+		top: auto;
+		right: auto;
+	}
+	.title-card{
+		font-size: 21pt;
+	}
+	.img-profil{
+		margin: auto;
+		display: flex;
+		width: 100%;
+	}
+	.title-profil{
+		margin-top: 16px;
+	}
+	.title-profil h1{
+		text-align: left;
+		font-size: 21pt;
+	}
+	.title-profil h5{
+		text-align: left;
+	}
+	.card-profil h1{
+		font-size: 18pt;
+	}
+	.card-profil h5{
+		font-weight: 600;
+		font-size: 14pt;
+	}
+}
+@media only screen and (min-width: 1204px) {
+	.profil{
+		display: none;
+	}
+	.img-nav{
+		position: relative;
+		width: 52px;
+		overflow: hidden;
+		border-radius: 50%;
+		top: auto;
+		right: auto;
+	}
+
+	#btn-qr{
+		display: block;
+		margin-top: 16px;
+	}
+	.name-user{
+		display: block;
+	}
+}
