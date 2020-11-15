@@ -249,6 +249,12 @@ nav{
 		font-weight: 400;
 		color: #5e5e5e;
 	}
+	#qri, .qri{
+		width: 12em;
+		height: 12em;
+		border: 1px solid rgba(0,0,0,0.5);
+		border-radius: 0.1em;
+	}
 
 }
 @media only screen and (min-width: 375px) {
@@ -392,6 +398,12 @@ nav{
 		font-weight: 400;
 		color: #5e5e5e;
 	}
+	#qri, .qri{
+		width: 11em;
+		height: 11em;
+		border: 1px solid rgba(0,0,0,0.5);
+		border-radius: 0.1em;
+	}
 }
 @media only screen and (min-width: 768px) {
 	.profil{
@@ -439,6 +451,12 @@ nav{
 		font-weight: 400;
 		color: #5e5e5e;
 	}
+	#qri, .qri{
+		width: 14em;
+		height: 14em;
+		border: 1px solid rgba(0,0,0,0.5);
+		border-radius: 0.1em;
+	}
 
 }
 @media only screen and (min-width: 992px) {
@@ -446,7 +464,7 @@ nav{
 		display: none;
 	}
 	.logo{
-		width:50%;
+		width:40%;
 	}
 	#btn-qr{
 		display: block;
