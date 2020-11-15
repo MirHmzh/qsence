@@ -323,6 +323,10 @@
 		font-family: 'Poppins';
 		color: #212529;
 	}
+	.img-profil{
+		width: 90%;
+		border-radius: 50%;
+	}
 </style>
 </head>
 <body>
@@ -350,7 +354,7 @@
 		</li>
 		</ul>
 		<div class="my-2 my-lg-0">
-			<ul class="navbar-nav">
+			<ul class="navbar-nav" id="profile-btn">
 				<li class="nav-item text-right name-user">
 					<span class="name-user">Amalia Anjayani</span>
 					<span class="position-user">Web Designer</span>
@@ -533,6 +537,31 @@
 							</div>
 						</div>
 					</div>
+					<div class="tab-pane" id="amel-wrapper">
+						<div class="card">
+							<div class="card-body p-5" style="background: rgb(255 255 255 / 60%);">
+								<div class="row" id="amel-wrapper">
+									<div class="col-3">
+										<img src="assets/img/amel.png" class="img-fluid img-profil" alt="">
+									</div>
+									<div class="col-9 align-self-center" >
+										<h1>Amalia Anjayani</h1>
+										<h5>Marketing</h5>
+									</div>
+								</div>
+								<div class="row mt-4">
+									<div class="col-6 justify-content-center text-center border-right">
+										<h5 style="font-weight: 800;">ID Karyawan</h5>
+										<h1 style="color:#868686">171080200</h1>
+									</div>
+									<div class="col-6  justify-content-center text-center">
+										<h5 style="font-weight: 800;">Tingkat Keterlambatan</h5>
+										<h1 style="color:#8b8b8b">20%</h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -575,9 +604,9 @@
 		//   'You clicked the button!',
 		//   'success'
 		// )
-		setTimeout(() => {
-			alerting();
-		}, 2000)
+		// setTimeout(() => {
+		// 	alerting();
+		// }, 2000)
 	});
 	let move = 1;
 	let rand = 0;
@@ -652,6 +681,7 @@
 	$('#nav-shadow').width($('#active-tab').width());
 	$('.nav-link').click((e) => {
 		let past_width = $('#active-tab').width();
+		$('#profile-btn').removeClass('active-tab');
 		$('#active-tab').removeAttr('id');
 		let el = e.target;
 		let parent = $(el).parent();
@@ -665,6 +695,7 @@
 				width: ($('#active-tab').width()),
 				top: $('#active-tab').position().top,
 				left: $('#active-tab').position().left,
+				height: $('#active-tab').height()
 			}
 		, 200, 'swing');
 		$('#main-content div')
@@ -727,6 +758,96 @@
 				}
 		});
 	});
+	$('#profile-btn').click((e) => {
+		$('#profile-btn').addClass('active-tab');
+		if ($().height() > 0) {
+			$('#nav-shadow').animate(
+				{
+					width: ($('.active-tab').width()),
+					height: ($('.active-tab').height()),
+					top: $('.active-tab').position().top,
+					left: $('.active-tab').position().left,
+				}
+			, 200, 'swing');
+		}else{
+			$('#nav-shadow').animate(
+				{
+					width: ($('.img-nav').width()),
+					height: ($('.img-nav').height()),
+					top: $('.img-nav').position().top,
+					left: $('.img-nav').position().left,
+				}
+			, 200, 'swing');
+		}
+		let wrapper_h = $('#main-wrapper').height();
+		$('#main-content div')
+			.animate({
+				opacity: 0,
+				'margin-left': '-10em'
+			}, 200, () => {
+				let wrapper_h = $('#main-wrapper').height();
+				$('#main-wrapper div').animate({
+					opacity: 0,
+					visibility: 'hidden'
+				}, 200, () => {
+					$('#main-wrapper').css({ height: wrapper_h, background: 'none', padding: 0}).html('');
+					$('#main-wrapper').html($('#amel-wrapper').html());
+					hist = 1;
+				});
+				// if ($(el).attr('data-target') != 'content-tab-history') {
+				// 	if (hist == 1) {
+				// 		$('#main-wrapper div').animate({
+				// 			opacity: 0,
+				// 			visibility: 'hidden'
+				// 		}, 200, () => {
+				// 			$('#main-wrapper').css({ background: 'none', padding: 0}).html('');
+				// 			$('#main-wrapper').html($('#'+$(el).attr('data-wrapper')+'-wrapper').html());
+				// 			hist = 0;
+				// 		});
+				// 	}else{
+				// 		$('.barcode').height(brc_h);
+				// 		$('.barcode').width(brc_w);
+				// 		$('#qri').animate({
+				// 			opacity: 0,
+				// 		}, { duration: 100, queue: false });
+				// 		$('#qri').animate({
+				// 			width: '0',
+				// 			height: '0',
+				// 			'margin-top': ($('.barcode').height()/2),
+				// 		}, { duration: 300, queue: false });
+				// 		setTimeout(() => {
+				// 			$('#qri').animate({
+				// 				width: qri_w,
+				// 				height: qri_h,
+				// 				opacity: 1,
+				// 				'margin-top': 0,
+				// 			}, 200);
+				// 		}, 300)
+
+				// 	}
+				// 	$('#main-content').html(
+				// 		'<div class="align-self-center" style="opacity: 0; margin-left: 10em">'+
+				// 		$('#'+$(el).attr('data-target')).html()+
+				// 		'</div>'
+				// 	)
+				// 	$('#main-content div').animate({
+				// 		opacity: 1,
+				// 		'margin-left': 0,
+				// 	}, 200);
+				// }else{
+				// 	$('#main-wrapper').css({ height: '' });
+				// 	$('#main-wrapper div').animate({
+				// 		opacity: 0,
+				// 		visibility: 'hidden'
+				// 	}, 200, () => {
+				// 		$('#card-history').css({ 'max-height' : wrapper_h});
+				// 		$('#main-wrapper').css({ height: wrapper_h, 'background-color':'#fff'}).html('');
+				// 		$('#main-wrapper').html($('#history-absen').html());
+				// 		hist = 1;
+				// 	});
+				// }
+		});
+	});
 	$('#btn-qr, #btn-qr-mobile').click(() => {
 		let qri_h = $('#qri').height();
 		let qri_w = $('#qri').width();
@@ -748,11 +869,18 @@
 		}, 300)
 	});
 	$(window).resize(() => {
+		let cact_tab = $('.active-tab').length;
+		let cact_tab_w = $('.active-tab').height();
+		let shadow_w = cact_tab > 0 ? (cact_tab_w > 0 ? $('.active-tab').width() : $('.img-nav').width()) : $('#active-tab').width(),
+			shadow_h = cact_tab > 0 ? (cact_tab_w > 0 ? $('.active-tab').height() : $('.img-nav').height()) : $('#active-tab').height(),
+			shadow_t = cact_tab > 0 ? (cact_tab_w > 0 ? $('.active-tab').position().top : $('.img-nav').position().top ) :$('#active-tab').position().top,
+			shadow_l = cact_tab > 0 ? (cact_tab_w > 0 ? $('.active-tab').position().left : $('.img-nav').position().left) : $('#active-tab').position().left;
 		$('#nav-shadow').css(
 		{
-			width: ($('#active-tab').width()),
-			top: $('#active-tab').position().top,
-			left: $('#active-tab').position().left,
+			width: shadow_w,
+			height: shadow_h,
+			top: shadow_t,
+			left: shadow_l,
 		});
 		$('.barcode').css({
 			width: '',

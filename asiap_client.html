@@ -1,14 +1,880 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>SERVER</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/font/Poppins-Regular.ttf">
 	<link rel="stylesheet" type="text/css" href="assets/css/globalstyle.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/client.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/server.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/sweetalert.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/wordpress-admin.min.css"> -->
+<style>
+	body{
+		background: #efefef;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		font-family: 'Poppins';
+	}
+	.img-nav{
+		width: 52px;
+		overflow: hidden;
+		border-radius: 50%;
+	}
+	.name-user{
+		font-size: 15pt;
+		font-weight: 700;
+		display: block;
+	}
+	.position-user{
+		display: block;
+		font-size: 11pt;
+    	font-weight: 400;
+	}
+	.logo{
+		width:40%;
+	}
+	nav{
+		background-color: transparent;
+		z-index: 2;
+	}
+	.navbar-light .navbar-nav .nav-link{
+		font-size: 14pt;
+		font-weight: 600;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+	.navbar-brand{
+		width: 35%;;
+	}
+	.card{
+		border-radius: 12px;
+		background: transparent;
+		overflow: hidden;
+		box-shadow: 2px 2px 10px rgba(110, 110, 110, 0.2);
+	}
+	.card-body{
+		padding:0;
+	}
+	.barcode{
+		padding: 32px;
+	}
+	.barcode img{
+		width: 100%;
+		height: 100%;
+	}
+	.bg-blur{
+		background: rgb(255 255 255 / 40%);
+	}
+	.date-card{
+		color: #919191;
+	}
+	.tabs-animated {
+		overflow: hidden;
+	}
+	#nav-shadow{
+		background-color: white;
+		position: absolute;
+		z-index: -1;
+		color: white;
+		border-radius: 0.2em;
+	}
+	#nav-shadow a{
+		color: white;
+	}
+	.nav-tabs{
+		border: 0;
+	}
+	.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{
+		border-color: rgba(0,0,0,0);
+	}
+	.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
+		transition: 0.3s;
+	}
+	#qro{
+		display: none;
+	}
+	#card-history{
+		overflow-y: scroll;
+		overflow-x: auto;
+	}
+	#card-history::-webkit-scrollbar-track
+	{
+		-webkit-box-shadow: inset 0 0 6px rgba(121, 121, 121, 0.3);
+		background-color: #F5F5F5;
+	}
+
+	#card-history::-webkit-scrollbar
+	{
+		width: 6px;
+		height: 6px;
+		background-color: #F5F5F5;
+	}
+
+	#card-history::-webkit-scrollbar-thumb
+	{
+		border-radius: 8px;
+		background-color: #838383;
+	}
+	#checkin-wrapper{
+		visibility: hidden;
+	}
+	.content-tab-checkout-dummy{
+		visibility: hidden;
+	}
+	.nav-mobile{
+		flex-direction: inherit;
+		margin: auto;
+	}
+	.profil{
+		display: none;
+		display: contents;
+	}
+	.p-qr{
+		padding: 4rem;
+	}
+	#btn-qr{
+		display: block;
+		margin-top: 16px;
+	}
+	#btn-qr-mobile{
+		display: none;
+		margin-top: 16px;
+	}
+	#menu ul li:hover{
+		cursor: pointer;
+	}
+	#active-tab a{
+		color:#000;
+	}
+	@media only screen and (max-width: 375px) {
+		.name-user{
+			display: none;
+		}
+		.navbar-light .navbar-nav .nav-link {
+			font-size: 10pt;
+		}
+		.img-nav{
+			position: absolute;
+			top:8px;
+			right: 20px;
+			width: 43px;
+		}
+		.logo{
+			width: 93%;
+		}
+		#menu{
+			margin: auto;
+			flex: none;
+		}
+		.p-qr{
+			padding: 0.5rem;
+		}
+		#btn-qr{
+			display: none;
+			margin-top: 16px;
+		}
+		#btn-qr-mobile{
+			margin: auto;
+			display: block;
+			margin-top: 16px;
+		}
+		#main-content{
+			padding:30px;
+		}
+		.title-card{
+			font-size: 19pt;
+		}
+		.date-card{
+			font-size: 11pt;
+		}
+	}
+	@media only screen and (min-width: 375px) {
+		.img-nav{
+			position: absolute;
+			top:8px;
+			right: 20px;
+		}
+		.navbar-light .navbar-nav .nav-link{
+			font-size: 11pt;
+		}
+		.logo{
+			width: 70%;
+		}
+		.title-card{
+			font-size: 19pt;
+		}
+		.date-card{
+			font-size: 12pt;
+		}
+		.name-user{
+			display: none;
+		}
+		#menu{
+			margin: auto;
+			flex: none;
+		}
+		.barcode{
+			padding: 0;
+		}
+		.barcode img {
+			width: 50%;
+		}
+		#btn-qr{
+			display: none;
+			margin-top: 16px;
+		}
+		#btn-qr-mobile{
+			margin: auto;
+			display: block;
+			margin-top: 16px;
+		}
+		#main-content{
+			padding:32px;
+		}
+		.p-qr{
+			padding: 3rem;
+		}
+	}
+
+	@media only screen and (min-width: 576px) {
+		.date-card{
+			font-size: 12pt;
+		}
+		.title-card{
+			font-size: 18pt;
+		}
+		#menu{
+			flex: auto;
+		}
+	}
+	@media only screen and (min-width: 768px) {
+		.profil{
+			display: block;
+			display: contents;
+		}
+		.logo{
+			width:60%;
+		}
+		#btn-qr{
+			display: block;
+			margin-top: 16px;
+		}
+		#btn-qr-mobile{
+			margin: auto;
+			display: none;
+			margin-top: 16px;
+		}
+		.title-card{
+			font-size: 20pt;
+		}
+	}
+	@media only screen and (min-width: 992px) {
+		.profil{
+			display: none;
+		}
+		.logo{
+			width:50%;
+		}
+		#btn-qr{
+			display: block;
+			margin-top: 16px;
+		}
+		.nav{
+			flex: auto;
+		}
+		.name-user{
+			display: block;
+		}
+		.img-nav{
+			position: relative;
+			width: 52px;
+			overflow: hidden;
+			border-radius: 50%;
+			top: auto;
+    		right: auto;
+		}
+		.title-card{
+			font-size: 21pt;
+		}
+	}
+	@media only screen and (min-width: 1204px) {
+		.profil{
+			display: none;
+		}
+		.img-nav{
+			position: relative;
+			width: 52px;
+			overflow: hidden;
+			border-radius: 50%;
+			top: auto;
+    		right: auto;
+		}
+
+		#btn-qr{
+			display: block;
+			margin-top: 16px;
+		}
+		.name-user{
+			display: block;
+		}
+	}
+	#cswal-title{
+		font-family: 'Poppins';
+		color: #212529;
+	}
+	.img-profil{
+		width: 90%;
+		border-radius: 50%;
+	}
+	#qri{
+		width: 15em;
+		height: 15em;
+	}
+</style>
 </head>
 <body>
+	<nav class="navbar navbar-expand-lg navbar-light">
+	<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button> -->
+	<a class="navbar-brand" href="#">
+		<img src="assets/img/logo.png" class="logo" alt="">
+	</a>
 
+	<div class="navbar-collapse" id="menu">
+		<ul class="navbar-nav nav nav-tabs mr-auto mt-2 mt-lg-0 nav-mobile">
+		<li class="nav-item" id="nav-shadow">
+			<a class="nav-link">&nbsp;</a>
+		</li>
+		<li class="nav-item" id="active-tab">
+			<a class="nav-link" data-target="content-tab-checkin" data-wrapper="checkin">Check In</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" data-target="content-tab-checkout" data-wrapper="checkout">Check Out</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" data-target="content-tab-history">History</a>
+		</li>
+		</ul>
+		<div class="my-2 my-lg-0">
+			<ul class="navbar-nav" id="profile-btn">
+				<li class="nav-item text-right name-user">
+					<span class="name-user">Amalia Anjayani</span>
+					<span class="position-user">Web Designer</span>
+				</li>
+				<li class="ml-2">
+					<img src="assets/img/amel.png" class="img-fluid img-nav" alt="">
+				</li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+
+	<!-- Elemen Background -->
+	<div id="moving-bg" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; ">
+		<img class="moving1" src="assets/img/bbl1.png" style="position: absolute; left: -10%;" alt="">
+		<img class="moving1" src="assets/img/bbl2.png" style="position: absolute; right: 0;" alt="">
+		<img class="moving2" src="assets/img/bbl3.png" style="position: absolute; right: 30%;" alt="">
+		<img class="moving2" src="assets/img/bbl4.png" style="position: absolute; right: 20%; top:10%;" alt="">
+		<img class="moving3" src="assets/img/bbl5.png" style="position: absolute; left: 20%; top:5%;" alt="">
+		<img class="moving3" src="assets/img/bbl6.png" style="position: absolute; right: 0; bottom:0;" alt="">
+		<img class="moving4" src="assets/img/bbl7.png" style="position: absolute; right: 50%; bottom:-15%;" alt="">
+		<img class="moving4" src="assets/img/bbl3.png" style="position: absolute; width: 20%; left:-5%; bottom:0;" alt="">
+		<img class="moving5" src="assets/img/bbl2.png" style="position: absolute; right: 20%; bottom:-10%;" alt="">
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="tab-content">
+					<div class="tab-pane active" id="checkin">
+						<div class="card">
+							<div class="card-body no-gutters">
+								<div class="row no-gutters" id="main-wrapper">
+									<div class="col-sm-5 bg-white p-qr">
+										<div class="barcode d-flex justify-content-center">
+											<canvas id="qri"></canvas>
+										</div>
+										<div class="d-flex justify-content-center">
+											<button id="btn-qr" class="btn btn-primary text-center" style="background: #7F8DFD;">Open Camera</button>
+										</div>
+									</div>
+									<div class="col-sm-7 d-flex justify-content-center bg-blur" id="main-content">
+										<div class=" align-self-center" id="content-tab-checkin">
+											<h1 class="text-center title-card">QR Code Check In</h1>
+											<h5 class="text-center date-card">Sabtu, 13 November 2020</h5>
+											<button id="btn-qr-mobile" class="btn btn-primary text-center" style="background: #7F8DFD;">Open Camera</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="checkout" class="tab-pane fade">
+						<div class="card" id="">
+							<div class="card-body no-gutters">
+								<div class="row no-gutters" id="checkout-wrapper">
+									<div class="col-sm-5 bg-white p-qr">
+										<div class="barcode d-flex justify-content-center">
+											<canvas hidden="" id="qri"></canvas>
+										</div>
+										<div class="d-flex justify-content-center">
+											<button id="btn-qr" class="btn btn-primary text-center" style="background: #7F8DFD;">Open Camera</button>
+										</div>
+									</div>
+									<div class="col-sm-7 d-flex justify-content-center bg-blur" id="main-content">
+										<div class=" align-self-center" id="content-tab-checkout">
+											<h1 class="text-center title-card">QR Code Check Out</h1>
+											<h5 class="text-center date-card">Sabtu, 13 November 2020</h5>
+											<button id="btn-qr-mobile" class="btn btn-primary text-center" style="background: #7F8DFD;">Open Camera</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="history">
+						<div class="card">
+							<div class="card-body no-gutters">
+								<div class="row no-gutters" id="history-absen">
+									<div class="col-12" id="card-history">
+										<table class="table table-hover">
+											<thead>
+												<tr>
+													<th>ID Karyawan</th>
+													<th>Nama Lengkap</th>
+													<th>Tanggal</th>
+													<th>Waktu</th>
+													<th>Status</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1710802000</td>
+													<td>Aditya Ardiansyah</td>
+													<td>16 November 2020</td>
+													<td>07:00</td>
+													<td>Datang</td>
+												</tr>
+												<tr>
+													<td>1710802001</td>
+													<td>Muhammad Fedy Rifki</td>
+													<td>16 November 2020</td>
+													<td>07:01</td>
+													<td>Datang</td>
+												</tr>
+												<tr>
+													<td>1710802002</td>
+													<td>Amiruddin Hamzah</td>
+													<td>16 November 2020</td>
+													<td>07:02</td>
+													<td>Datang</td>
+												</tr>
+												<tr>
+													<td>1710802000</td>
+													<td>Aditya Ardiansyah</td>
+													<td>16 November 2020</td>
+													<td>17:00</td>
+													<td>Pulang</td>
+												</tr>
+												<tr>
+													<td>1710802001</td>
+													<td>Muhammad Fedy Rifki</td>
+													<td>16 November 2020</td>
+													<td>17:01</td>
+													<td>Pulang</td>
+												</tr>
+												<tr>
+													<td>1710802002</td>
+													<td>Amiruddin Hamzah</td>
+													<td>16 November 2020</td>
+													<td>17:02</td>
+													<td>Pulang</td>
+												</tr>
+												<tr>
+													<td>1710802000</td>
+													<td>Aditya Ardiansyah</td>
+													<td>15 November 2020</td>
+													<td>07:00</td>
+													<td>Datang</td>
+												</tr>
+												<tr>
+													<td>1710802001</td>
+													<td>Muhammad Fedy Rifki</td>
+													<td>15 November 2020</td>
+													<td>07:01</td>
+													<td>Datang</td>
+												</tr>
+												<tr>
+													<td>1710802002</td>
+													<td>Amiruddin Hamzah</td>
+													<td>15 November 2020</td>
+													<td>07:02</td>
+													<td>Datang</td>
+												</tr>
+												<tr>
+													<td>1710802000</td>
+													<td>Aditya Ardiansyah</td>
+													<td>15 November 2020</td>
+													<td>07:00</td>
+													<td>Pulang</td>
+												</tr>
+												<tr>
+													<td>1710802001</td>
+													<td>Muhammad Fedy Rifki</td>
+													<td>15 November 2020</td>
+													<td>07:01</td>
+													<td>Pulang</td>
+												</tr>
+												<tr>
+													<td>1710802002</td>
+													<td>Amiruddin Hamzah</td>
+													<td>15 November 2020</td>
+													<td>07:02</td>
+													<td>Pulang</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="amel-wrapper">
+						<div class="card">
+							<div class="card-body p-5" style="background: rgb(255 255 255 / 60%);">
+								<div class="row" id="amel-wrapper">
+									<div class="col-3">
+										<img src="assets/img/amel.png" class="img-fluid img-profil" alt="">
+									</div>
+									<div class="col-9 align-self-center" >
+										<h1>Amalia Anjayani</h1>
+										<h5>Marketing</h5>
+									</div>
+								</div>
+								<div class="row mt-4">
+									<div class="col-6 justify-content-center text-center border-right">
+										<h5 style="font-weight: 800;">ID Karyawan</h5>
+										<h1 style="color:#868686">171080200</h1>
+									</div>
+									<div class="col-6  justify-content-center text-center">
+										<h5 style="font-weight: 800;">Tingkat Keterlambatan</h5>
+										<h1 style="color:#8b8b8b">20%</h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
-<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"/>
-<script src="assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"/>
+
+<!-- Helper Element -->
+
+<div class="row no-gutters" id="checkin-wrapper">
+	<div class="col-sm-5 bg-white p-qr">
+		<div class="barcode d-flex justify-content-center">
+			<canvas hidden="" id="qri"></canvas>
+		</div>
+		<div class="d-flex justify-content-center">
+			<button id="btn-qr" class="btn btn-primary text-center" style="background: #7F8DFD;">Open Camera</button>
+		</div>
+	</div>
+	<div class="col-sm-7 d-flex justify-content-center bg-blur" id="main-content">
+		<div class=" align-self-center" id="content-tab-checkin">
+			<h1 class="text-center title-card">QR Code Check In</h1>
+			<h5 class="text-center date-card">Sabtu, 13 November 2020</h5>
+			<button id="btn-qr-mobile" class="btn btn-primary text-center" style="background: #7F8DFD;">Open Camera</button>
+		</div>
+	</div>
+</div>
+<div class=" align-self-center content-tab-checkout-dummy" id="content-tab-checkout">
+	<h1 class="text-center title-card">QR Code Check Out</h1>
+	<h5 class="text-center date-card">Sabtu, 13 November 2020</h5>
+	<button id="btn-qr-mobile" class="btn btn-primary text-center" style="background: #7F8DFD;">Open Camera</button>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/sweetalert.min.js"></script>
+<script src="assets/js/qr_packed.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	let vids;
+	let move = 1;
+	let rand = 0;
+	let hist = 0;
+	let neg = [
+		{
+			'top' : '-=20%',
+			'left' : '-=20%',
+		},
+		{
+			'left' : '-=20%',
+			'right' : '-=20%',
+		},
+		{
+			'right' : '-=20%',
+			'bottom' : '-=20%',
+		},
+		{
+			'bottom' : '-=20%',
+			'left' : '-=20%',
+		}
+	];
+	let pos = [
+		{
+			'top' : '+=20%',
+			'left' : '+=20%',
+		},
+		{
+			'left' : '+=20%',
+			'right' : '+=20%',
+		},
+		{
+			'right' : '+=20%',
+			'bottom' : '+=20%',
+		},
+		{
+			'bottom' : '+=20%',
+			'left' : '+=20%',
+		}
+	];
+	function movebg(){
+		$.each($('#moving-bg'), function(index, val) {
+			if (move == 1) {
+				random = Math.floor(Math.random() * 4);
+				$(val).animate(pos[random], 5000, 'swing');
+				move = 2;
+			}else{
+				$(val).animate(neg[random], 5000, 'swing');
+				move = 1;
+			}
+		});
+	}
+	function alerting(){
+		var bMusic = new Audio('assets/audio/smongko.mp3');
+		setTimeout(() => { bMusic.play() }, 100)
+		Swal.fire({
+			title: '<span id="cswal-title">Check In : 07:00</span>',
+			showConfirmButton: false,
+			timer: 2000,
+			icon: 'success',
+			backdrop: false
+		});
+	}
+
+	function initCam() {
+		// if (vids) {
+		// 	vids.getTracks().forEach(function(track) {
+		//         if (track.readyState == 'live') {
+		//             track.stop();
+		//         }
+		//     });
+		// }
+		const qrcodes = window.qrcode;
+
+		const video = document.createElement("video");
+		const canvasElement = document.getElementById("qri");
+		const canvas = canvasElement.getContext("2d");
+
+		const qrResult = document.getElementById("qr-result");
+		const outputData = document.getElementById("outputData");
+
+		let scanning = false;
+
+		qrcodes.callback = res => {
+		  if (res) {
+		    alert(res+' absen')
+		  }
+		};
+
+	  	try {
+	  		navigator.mediaDevices
+		    .getUserMedia({ video: { facingMode: "environment" } })
+		    .then(function(stream) {
+		      scanning = true;
+		      // qrResult.hidden = true;
+		      // btnScanQR.hidden = true;
+		      canvasElement.hidden = false;
+		      video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+		      video.srcObject = stream;
+		      video.play();
+		      vids = stream;
+		      tick();
+		      scan();
+		    });
+	  	} catch(e) {
+	  		alerting();
+	  	}
+
+		function tick() {
+		  canvasElement.height = video.videoHeight;
+		  canvasElement.width = video.videoWidth;
+		  canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
+
+		  scanning && requestAnimationFrame(tick);
+		}
+
+		function scan() {
+		  try {
+		    qrcodes.decode();
+		  } catch (e) {
+		    setTimeout(scan, 300);
+		  }
+		}
+	}
+	movebg();
+	setInterval(() => {
+		movebg();
+	}, 5000);
+	$('#nav-shadow-mobile').position($('#active-tab-mobile').position());
+	$('#nav-shadow-mobile').width($('#active-tab-mobile').width());
+
+	$('#nav-shadow').position($('#active-tab').position());
+	$('#nav-shadow').width($('#active-tab').width());
+	$('.nav-link').click((e) => {
+		let past_width = $('#active-tab').width();
+		$('#profile-btn').removeClass('active-tab');
+		$('#active-tab').removeAttr('id');
+		let el = e.target;
+		let parent = $(el).parent();
+		$(parent).attr('id', 'active-tab');
+		let brc_h = $('.barcode').height();
+		let brc_w = $('.barcode').width();
+		let qri_h = '15em';
+		let qri_w = '15em';
+		$('#nav-shadow').animate(
+			{
+				width: ($('#active-tab').width()),
+				top: $('#active-tab').position().top,
+				left: $('#active-tab').position().left,
+				height: $('#active-tab').height()
+			}
+		, 200, 'swing');
+		$('#main-content div')
+			.animate({
+				opacity: 0,
+				'margin-left': '-10em'
+			}, 200, () => {
+				let wrapper_h = $('#main-wrapper').height();
+				if ($(el).attr('data-target') != 'content-tab-history') {
+					if (hist == 1) {
+						$('#main-wrapper div').animate({
+							opacity: 0,
+							visibility: 'hidden'
+						}, 200, () => {
+							$('#main-wrapper').css({ background: 'none', padding: 0}).html('');
+							$('#main-wrapper').html($('#'+$(el).attr('data-wrapper')+'-wrapper').html());
+							hist = 0;
+						});
+					}
+					$('#main-content').html(
+						'<div class="align-self-center" style="opacity: 0; margin-left: 10em">'+
+						$('#'+$(el).attr('data-target')).html()+
+						'</div>'
+					)
+					$('#main-content div').animate({
+						opacity: 1,
+						'margin-left': 0,
+					}, 200);
+				}else{
+					if (vids) {
+						vids.getTracks().forEach(function(track) {
+					        if (track.readyState == 'live') {
+					            track.stop();
+					        }
+					    });
+					}
+					$('#main-wrapper').css({ height: '' });
+					$('#main-wrapper div').animate({
+						opacity: 0,
+						visibility: 'hidden'
+					}, 200, () => {
+						$('#card-history').css({ 'max-height' : wrapper_h});
+						$('#main-wrapper').css({ height: wrapper_h, 'background-color':'#fff'}).html('');
+						$('#main-wrapper').html($('#history-absen').html());
+						hist = 1;
+					});
+				}
+		});
+	});
+	$('#profile-btn').click((e) => {
+		if (vids) {
+			vids.getTracks().forEach(function(track) {
+		        if (track.readyState == 'live') {
+		            track.stop();
+		        }
+		    });
+		}
+		$('#profile-btn').addClass('active-tab');
+		if ($().height() > 0) {
+			$('#nav-shadow').animate(
+				{
+					width: ($('.active-tab').width()),
+					height: ($('.active-tab').height()),
+					top: $('.active-tab').position().top,
+					left: $('.active-tab').position().left,
+				}
+			, 200, 'swing');
+		}else{
+			$('#nav-shadow').animate(
+				{
+					width: ($('.img-nav').width()),
+					height: ($('.img-nav').height()),
+					top: $('.img-nav').position().top,
+					left: $('.img-nav').position().left,
+				}
+			, 200, 'swing');
+		}
+		let wrapper_h = $('#main-wrapper').height();
+		$('#main-content div')
+			.animate({
+				opacity: 0,
+				'margin-left': '-10em'
+			}, 200, () => {
+				let wrapper_h = $('#main-wrapper').height();
+				$('#main-wrapper div').animate({
+					opacity: 0,
+					visibility: 'hidden'
+				}, 200, () => {
+					$('#main-wrapper').css({ height: wrapper_h, background: 'none', padding: 0}).html('');
+					$('#main-wrapper').html($('#amel-wrapper').html());
+					hist = 1;
+				});
+		});
+	});
+	$('#btn-qr, #btn-qr-mobile').click(() => {
+		initCam();
+	});
+	$(window).resize(() => {
+		let cact_tab = $('.active-tab').length;
+		let cact_tab_w = $('.active-tab').height();
+		let shadow_w = cact_tab > 0 ? (cact_tab_w > 0 ? $('.active-tab').width() : $('.img-nav').width()) : $('#active-tab').width(),
+			shadow_h = cact_tab > 0 ? (cact_tab_w > 0 ? $('.active-tab').height() : $('.img-nav').height()) : $('#active-tab').height(),
+			shadow_t = cact_tab > 0 ? (cact_tab_w > 0 ? $('.active-tab').position().top : $('.img-nav').position().top ) :$('#active-tab').position().top,
+			shadow_l = cact_tab > 0 ? (cact_tab_w > 0 ? $('.active-tab').position().left : $('.img-nav').position().left) : $('#active-tab').position().left;
+		$('#nav-shadow').css(
+		{
+			width: shadow_w,
+			height: shadow_h,
+			top: shadow_t,
+			left: shadow_l,
+		});
+		$('.barcode').css({
+			width: '',
+			height: '',
+		});
+		$('#qri').css({
+			width: '',
+			height: '',
+		});
+		$('#main-wrapper').css({
+			height: '',
+		});
+	});
+</script>
 </html>
