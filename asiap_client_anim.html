@@ -148,6 +148,20 @@
 	#active-tab a{
 		color:#000;
 	}
+	#cswal-title{
+		font-family: 'Poppins';
+		color: #212529;
+	}
+	.img-profil{
+		width: 90%;
+		border-radius: 50%;
+	}
+	#qri{
+		width: 15em;
+		height: 15em;
+		border: 1px solid rgba(0,0,0,0.5);
+		border-radius: 0.1em;
+	}
 	@media only screen and (max-width: 375px) {
 		.name-user{
 			display: none;
@@ -189,6 +203,30 @@
 		.date-card{
 			font-size: 11pt;
 		}
+		.img-profil{
+			margin: auto;
+			display: flex;
+			width: 60%;
+		}
+		.title-profil{
+			margin-top:16px;
+		}
+		.title-profil h1{
+			text-align: center;
+			font-size: 17pt;
+		}
+		.title-profil h5{
+			font-size: 14pt;
+			text-align: center;
+		}
+		.card-profil h1{
+			font-size: 15pt;
+		}
+		.card-profil h5{
+			font-weight: 400;
+    		font-size: 10pt;
+		}
+		
 	}
 	@media only screen and (min-width: 375px) {
 		.img-nav{
@@ -236,6 +274,28 @@
 		.p-qr{
 			padding: 3rem;
 		}
+		.img-profil{
+			margin: auto;
+			display: flex;
+			width: 40%;
+		}
+		.title-profil{
+			margin-top: 16px;
+		}
+		.title-profil h1{
+			text-align: center;
+			font-size: 20pt;
+		}
+		.title-profil h5{
+			text-align: center;
+		}
+		.card-profil h1{
+			font-size: 18pt;
+		}
+		.card-profil h5{
+			font-weight: 600;
+    		font-size: 13pt;
+		}
 	}
 
 	@media only screen and (min-width: 576px) {
@@ -247,6 +307,25 @@
 		}
 		#menu{
 			flex: auto;
+		}
+		.img-profil{
+			margin: auto;
+			display: flex;
+			width: 100%;
+		}
+		.title-profil h1{
+			text-align: left;
+			font-size: 20pt;
+		}
+		.title-profil h5{
+			text-align: left;
+		}
+		.card-profil h1{
+			font-size: 18pt;
+		}
+		.card-profil h5{
+			font-weight: 600;
+    		font-size: 13pt;
 		}
 	}
 	@media only screen and (min-width: 768px) {
@@ -269,6 +348,12 @@
 		.title-card{
 			font-size: 20pt;
 		}
+		.img-profil{
+			margin: auto;
+			display: flex;
+			width: 100%;
+		}
+		
 	}
 	@media only screen and (min-width: 992px) {
 		.profil{
@@ -298,6 +383,28 @@
 		.title-card{
 			font-size: 21pt;
 		}
+		.img-profil{
+			margin: auto;
+			display: flex;
+			width: 100%;
+		}
+		.title-profil{
+			margin-top: 16px;
+		}
+		.title-profil h1{
+			text-align: left;
+			font-size: 21pt;
+		}
+		.title-profil h5{
+			text-align: left;
+		}
+		.card-profil h1{
+			font-size: 18pt;
+		}
+		.card-profil h5{
+			font-weight: 600;
+    		font-size: 14pt;
+		}
 	}
 	@media only screen and (min-width: 1204px) {
 		.profil{
@@ -320,20 +427,8 @@
 			display: block;
 		}
 	}
-	#cswal-title{
-		font-family: 'Poppins';
-		color: #212529;
-	}
-	.img-profil{
-		width: 90%;
-		border-radius: 50%;
-	}
-	#qri{
-		width: 15em;
-		height: 15em;
-		border: 1px solid rgba(0,0,0,0.5);
-		border-radius: 0.1em;
-	}
+	
+	
 </style>
 </head>
 <body>
@@ -548,20 +643,20 @@
 						<div class="card">
 							<div class="card-body p-5" style="background: rgb(255 255 255 / 60%);">
 								<div class="row" id="amel-wrapper">
-									<div class="col-3">
+									<div class="col-sm-3">
 										<img src="assets/img/amel.png" class="img-fluid img-profil" alt="">
 									</div>
-									<div class="col-9 align-self-center" >
+									<div class="col-sm-9 align-self-center title-profil" >
 										<h1>Amalia Anjayani</h1>
 										<h5>Marketing</h5>
 									</div>
 								</div>
 								<div class="row mt-4">
-									<div class="col-6 justify-content-center text-center border-right">
+									<div class="col-6 justify-content-center text-center border-right card-profil">
 										<h5 style="font-weight: 800;">ID Karyawan</h5>
 										<h1 style="color:#868686">171080200</h1>
 									</div>
-									<div class="col-6  justify-content-center text-center">
+									<div class="col-6  justify-content-center text-center card-profil">
 										<h5 style="font-weight: 800;">Tingkat Keterlambatan</h5>
 										<h1 style="color:#8b8b8b">20%</h1>
 									</div>
