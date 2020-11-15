@@ -150,6 +150,19 @@ nav{
 	border: 1px solid rgba(0,0,0,0.5);
 	border-radius: 0.1em;
 }
+.history-date h1{
+	font-weight: 600;
+}
+
+.history-time h2{
+	font-size: 16pt;
+	font-weight: 400;
+}
+.history-time h3{
+	font-weight: 600;
+	color: #5e5e5e;
+}
+
 @media only screen and (max-width: 375px) {
 	.name-user{
 		display: none;
@@ -213,6 +226,22 @@ nav{
 	.card-profil h5{
 		font-weight: 400;
 		font-size: 10pt;
+	}
+	.history-date h1{
+		font-size: 19pt;
+		font-weight: 500;
+	}
+	.history-date h5{
+		font-size: 12pt;
+	}
+
+	.history-time h2{
+		font-size: 13pt;
+		font-weight: 300;
+	}
+	.history-time h3{
+		font-weight: 400;
+		color: #5e5e5e;
 	}
 
 }
@@ -284,6 +313,21 @@ nav{
 		font-weight: 600;
 		font-size: 13pt;
 	}
+	.history-date h1{
+		font-weight: 400;
+	}
+	.history-date h5{
+		font-size: 13pt;
+	}
+
+	.history-time h2{
+		font-size: 13pt;
+		font-weight: 300;
+	}
+	.history-time h3{
+		font-weight: 400;
+		color: #5e5e5e;
+	}
 }
 
 @media only screen and (min-width: 576px) {
@@ -315,6 +359,21 @@ nav{
 		font-weight: 600;
 		font-size: 13pt;
 	}
+	.history-date h1{
+		font-weight: 400;
+	}
+	.history-date h5{
+		font-size: 13pt;
+	}
+
+	.history-time h2{
+		font-size: 13pt;
+		font-weight: 300;
+	}
+	.history-time h3{
+		font-weight: 400;
+		color: #5e5e5e;
+	}
 }
 @media only screen and (min-width: 768px) {
 	.profil{
@@ -340,6 +399,21 @@ nav{
 		margin: auto;
 		display: flex;
 		width: 100%;
+	}
+	.history-date h1{
+		font-weight: 400;
+	}
+	.history-date h5{
+		font-size: 13pt;
+	}
+
+	.history-time h2{
+		font-size: 13t;
+		font-weight: 300;
+	}
+	.history-time h3{
+		font-weight: 400;
+		color: #5e5e5e;
 	}
 
 }
