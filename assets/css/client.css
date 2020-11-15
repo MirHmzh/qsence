@@ -175,6 +175,9 @@ footer{
 }
 
 @media only screen and (max-width: 375px) {
+	.barcode{
+		padding: 16px;
+	}
 	.caption{
 		font-size: 9pt;
 	}
@@ -207,7 +210,7 @@ footer{
 		flex: none;
 	}
 	.p-qr{
-		padding: 0.5rem;
+		padding: 0rem;
 	}
 	#btn-qr{
 		display: none;
@@ -222,7 +225,7 @@ footer{
 		padding:30px;
 	}
 	.title-card{
-		font-size: 19pt;
+		font-size: 17pt;
 	}
 	.date-card{
 		font-size: 11pt;
