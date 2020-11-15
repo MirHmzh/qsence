@@ -281,6 +281,9 @@ footer{
 
 }
 @media only screen and (min-width: 375px) {
+	.navbar{
+		padding: 0.5rem 1rem;
+	}
 	.caption{
 		font-size: 9pt;
 	}
@@ -381,6 +384,9 @@ footer{
 }
 
 @media only screen and (min-width: 576px) {
+	.navbar{
+		padding: 0.5rem 1rem;
+	}
 	.el{
 		margin-top:2px;
 	}
