@@ -5,6 +5,9 @@ body{
 	height: 100%;
 	font-family: 'Poppins';
 }
+.el{
+	margin-top:8px;
+}
 .img-nav{
 	width: 52px;
 	overflow: hidden;
@@ -162,8 +165,22 @@ nav{
 	font-weight: 600;
 	color: #5e5e5e;
 }
+footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 8px;
+	background: #333;
+	color:#fff;
+}
 
 @media only screen and (max-width: 375px) {
+	.caption{
+		font-size: 9pt;
+	}
+	.el{
+		margin-top:0px;
+	}
 	.name-user{
 		display: none;
 	}
@@ -249,9 +266,18 @@ nav{
 		border: 1px solid rgba(0,0,0,0.5);
 		border-radius: 0.1em;
 	}
+	footer{
+		display: none;
+	}
 
 }
 @media only screen and (min-width: 375px) {
+	.caption{
+		font-size: 9pt;
+	}
+	.el{
+		margin-top:0px;
+	}
 	.img-nav{
 		position: absolute;
 		top:8px;
@@ -295,7 +321,7 @@ nav{
 		padding:32px;
 	}
 	.p-qr{
-		padding: 3rem;
+		padding: 2rem;
 	}
 	.img-profil{
 		margin: auto;
@@ -334,9 +360,15 @@ nav{
 		font-weight: 400;
 		color: #5e5e5e;
 	}
+	footer{
+		display: none;
+	}
 }
 
 @media only screen and (min-width: 576px) {
+	.el{
+		margin-top:2px;
+	}
 	.date-card{
 		font-size: 12pt;
 	}
@@ -386,8 +418,23 @@ nav{
 		border: 1px solid rgba(0,0,0,0.5);
 		border-radius: 0.1em;
 	}
+	footer{
+		display: block;
+	}
+	#btn-qr{
+		display: block;
+		margin-top: 16px;
+	}
+	#btn-qr-mobile{
+		margin: auto;
+		display: none;
+		margin-top: 16px;
+	}
 }
 @media only screen and (min-width: 768px) {
+	.el{
+		margin-top:8px;
+	}
 	.profil{
 		display: block;
 		display: contents;
@@ -433,6 +480,9 @@ nav{
 		border: 1px solid rgba(0,0,0,0.5);
 		border-radius: 0.1em;
 	}
+	footer{
+		display: block;
+	}
 
 }
 @media only screen and (min-width: 992px) {
@@ -462,28 +512,34 @@ nav{
 	}
 	.title-card{
 		font-size: 21pt;
+		font-weight: 700;
 	}
 	.img-profil{
 		margin: auto;
 		display: flex;
-		width: 100%;
+		width: 80%;
 	}
 	.title-profil{
 		margin-top: 16px;
 	}
 	.title-profil h1{
 		text-align: left;
-		font-size: 21pt;
+		font-size: 25pt;
+		font-weight: 700;
 	}
 	.title-profil h5{
 		text-align: left;
 	}
 	.card-profil h1{
-		font-size: 18pt;
+		font-size: 25pt;
+		font-weight: 700;
 	}
 	.card-profil h5{
 		font-weight: 600;
 		font-size: 14pt;
+	}
+	footer{
+		display: block;
 	}
 }
 @media only screen and (min-width: 1204px) {
@@ -504,6 +560,9 @@ nav{
 		margin-top: 16px;
 	}
 	.name-user{
+		display: block;
+	}
+	footer{
 		display: block;
 	}
 }

@@ -35,11 +35,11 @@
 		<div class="my-2 my-lg-0">
 			<ul class="navbar-nav" id="profile-btn">
 				<li class="nav-item text-right name-user">
-					<span class="name-user">Amelia Anjayani</span>
-					<span class="position-user">HR Manager</span>
+					<span class="name-user">Atta Halilintar</span>
+					<span class="position-user">Administrator</span>
 				</li>
 				<li class="ml-2">
-					<img src="assets/img/amel.png" class="img-fluid img-nav" alt="">
+					<img src="assets/img/atta.png" class="img-fluid img-nav" alt="">
 				</li>
 			</ul>
 		</div>
@@ -59,7 +59,7 @@
 		<img class="moving5" src="assets/img/bbl2.png" style="position: absolute; right: 20%; bottom:-10%;" alt="">
 	</div>
 
-	<div class="container">
+	<div class="container el">
 		<div class="row">
 			<div class="col-12">
 				<div class="tab-content">
@@ -72,14 +72,17 @@
 											<img id="qri" src="assets/img/brcd.png" alt="">
 										</div>
 										<div class="d-flex justify-content-center">
-											<button id="btn-qr" class="btn btn-primary text-center btn-qr" onClick="switchQr()" style="background: #7F8DFD;">Generate QR Code</button>
+											<button id="btn-qr" class="btn btn-primary text-center btn-qr" onClick="switchQr()">Generate QR Code</button>
 										</div>
 									</div>
 									<div class="col-sm-7 d-flex justify-content-center bg-blur" id="main-content">
 										<div class=" align-self-center" id="content-tab-checkin">
 											<h1 class="text-center title-card">QR Code Check In</h1>
-											<h5 class="text-center date-card">Sabtu, 13 November 2020</h5>
-											<button id="btn-qr-mobile" class="btn btn-primary text-center btn-qr-mobile" onClick="switchQr()" style="background: #7F8DFD;">Generate QR Code</button>
+											<h5 class="text-center date-card">Senin, 16 November 2020</h5>
+											<button id="btn-qr-mobile" class="btn btn-primary text-center btn-qr-mobile" onClick="switchQr()">Generate QR Code</button>
+											<p class="text-center mt-4 caption">
+												<b>TIPS :</b> Klik Tombol Generate QR Code, untuk memperbarui QR Code.
+											</p>
 										</div>
 									</div>
 								</div>
@@ -101,8 +104,11 @@
 									<div class="col-sm-7 d-flex justify-content-center bg-blur" id="main-content">
 										<div class=" align-self-center" id="content-tab-checkout">
 											<h1 class="text-center title-card">QR Code Check Out</h1>
-											<h5 class="text-center date-card">Sabtu, 13 November 2020</h5>
+											<h5 class="text-center date-card">Senin, 16 November 2020</h5>
 											<button id="btn-qr-mobile" class="btn btn-primary text-center btn-qr-mobile" onClick="switchQr()" style="background: #7F8DFD;">Generate QR Code</button>
+											<p class="text-center mt-4 caption">
+												<b>TIPS :</b> Klik Tombol Generate QR Code, untuk memperbarui QR Code.
+											</p>
 										</div>
 									</div>
 								</div>
@@ -245,6 +251,18 @@
 			</div>
 		</div>
 	</div>
+	<footer>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col">
+					<span>@Koepeped Squad</span>
+				</div>
+				<div class="col text-right">
+					<span>IT FEST 2020</span>
+				</div>
+			</div>
+		</div>
+	</footer>
 </body>
 
 <!-- Helper Element -->
@@ -261,15 +279,21 @@
 	<div class="col-sm-7 d-flex justify-content-center bg-blur" id="main-content">
 		<div class=" align-self-center" id="content-tab-checkin">
 			<h1 class="text-center title-card">QR Code Check In</h1>
-			<h5 class="text-center date-card">Sabtu, 13 November 2020</h5>
+			<h5 class="text-center date-card">Senin, 16 November 2020</h5>
 			<button id="btn-qr-mobile" class="btn btn-primary text-center btn-qr-mobile" onClick="switchQr()" style="background: #7F8DFD;">Generate QR Code</button>
+			<p class="text-center mt-2 caption">
+				<b>TIPS :</b> Klik Tombol Generate QR Code, untuk memperbarui QR Code.
+			</p>
 		</div>
 	</div>
 </div>
 <div class=" align-self-center content-tab-checkout-dummy" id="content-tab-checkout">
 	<h1 class="text-center title-card">QR Code Check Out</h1>
-	<h5 class="text-center date-card">Sabtu, 13 November 2020</h5>
+	<h5 class="text-center date-card">Senin, 16 November 2020</h5>
 	<button id="btn-qr-mobile" class="btn btn-primary text-center btn-qr-mobile" onClick="switchQr()" style="background: #7F8DFD;">Generate QR Code</button>
+	<p class="text-center mt-2 caption">
+		<b>TIPS :</b> Klik Tombol Generate QR Code, untuk memperbarui QR Code.
+	</p>
 </div>
 
 <script src="assets/js/jquery.min.js"></script>

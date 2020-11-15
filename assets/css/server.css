@@ -125,6 +125,11 @@ nav{
 #btn-qr{
 	display: block;
 	margin-top: 16px;
+	border:1px solid #7F8DFD;
+	background: #7F8DFD
+}
+#btn-qr:hover{
+	background-color: #8e9bff;
 }
 #btn-qr-mobile{
 	display: none;
@@ -136,7 +141,25 @@ nav{
 #active-tab a{
 	color:#000;
 }
+footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 8px;
+	background: #333;
+	color:#fff;
+}
+.el{
+	margin-top:8px;
+}
+
 @media only screen and (max-width: 375px) {
+	.caption{
+		font-size: 9pt;
+	}
+	.el{
+		margin-top:0px;
+	}
 	.name-user{
 		display: none;
 	}
@@ -162,11 +185,24 @@ nav{
 	#btn-qr{
 		display: none;
 		margin-top: 16px;
+		border:1px solid #7F8DFD;
+		background: #7F8DFD;
+		font-size: 10pt;
+	}
+	#btn-qr:hover{
+		background-color: #8e9bff;
 	}
 	#btn-qr-mobile{
 		margin: auto;
 		display: block;
 		margin-top: 16px;
+		border:1px solid #7F8DFD;
+		background: #7F8DFD;
+		font-size: 10pt;
+
+	}
+	#btn-qr-mobile:hover{
+		background-color: #8e9bff;
 	}
 	#main-content{
 		padding:30px;
@@ -177,8 +213,18 @@ nav{
 	.date-card{
 		font-size: 11pt;
 	}
+	footer{
+		display: none;
+	}
+	
 }
 @media only screen and (min-width: 375px) {
+	.caption{
+		font-size: 9pt;
+	}
+	.el{
+		margin-top:0px;
+	}
 	.img-nav{
 		position: absolute;
 		top:8px;
@@ -212,11 +258,22 @@ nav{
 	#btn-qr{
 		display: none;
 		margin-top: 16px;
+		border:1px solid #7F8DFD;
+		background: #7F8DFD;
+		font-size: 10pt;
+	}
+	#btn-qr:hover{
+		background-color: #8e9bff;
 	}
 	#btn-qr-mobile{
 		margin: auto;
 		display: block;
 		margin-top: 16px;
+		border:1px solid #7F8DFD;
+		background: #7F8DFD;
+	}
+	#btn-qr-mobile:hover{
+		background-color: #8e9bff;
 	}
 	#main-content{
 		padding:32px;
@@ -224,9 +281,18 @@ nav{
 	.p-qr{
 		padding: 3rem;
 	}
+	footer{
+		display: none;
+	}
 }
 
 @media only screen and (min-width: 576px) {
+	.caption{
+		font-size: 10pt;
+	}
+	.el{
+		margin-top:0px;
+	}
 	.date-card{
 		font-size: 12pt;
 	}
@@ -236,8 +302,32 @@ nav{
 	#menu{
 		flex: auto;
 	}
+	footer{
+		display: block;
+	}
+	#btn-qr{
+		display: block;
+		margin-top: 30px;
+		background: #7F8DFD;
+		border:1px solid #7F8DFD;
+		font-size: 10pt;
+	}
+	#btn-qr:hover{
+		background-color: #8e9bff;
+}
+	#btn-qr-mobile{
+		margin: auto;
+		display: none;
+		margin-top: 16px;
+	}
 }
 @media only screen and (min-width: 768px) {
+	.caption{
+		font-size: 12pt;
+	}
+	.el{
+		margin-top:4px;
+	}
 	.profil{
 		display: block;
 		display: contents;
@@ -248,7 +338,12 @@ nav{
 	#btn-qr{
 		display: block;
 		margin-top: 16px;
+		background: #7F8DFD;
+		border:1px solid #7F8DFD;
 	}
+	#btn-qr:hover{
+		background-color: #8e9bff;
+}
 	#btn-qr-mobile{
 		margin: auto;
 		display: none;
@@ -257,17 +352,28 @@ nav{
 	.title-card{
 		font-size: 20pt;
 	}
+	footer{
+		display: block;
+	}
 }
 @media only screen and (min-width: 992px) {
+	.el{
+		margin-top:8px;
+	}
 	.profil{
 		display: none;
 	}
 	.logo{
-		width:50%;
+		width:40%;
 	}
 	#btn-qr{
 		display: block;
 		margin-top: 16px;
+		border:1px solid #7F8DFD;
+		background: #7F8DFD
+	}
+	#btn-qr:hover{
+		background-color: #8e9bff;
 	}
 	.nav{
 		flex: auto;
@@ -285,9 +391,16 @@ nav{
 	}
 	.title-card{
 		font-size: 21pt;
+		font-weight: 600;
+	}
+	footer{
+		display: block;
 	}
 }
 @media only screen and (min-width: 1204px) {
+	.el{
+		margin-top:8px;
+	}
 	.profil{
 		display: none;
 	}
@@ -303,8 +416,16 @@ nav{
 	#btn-qr{
 		display: block;
 		margin-top: 16px;
+		background: #7F8DFD;
+		border:1px solid #7F8DFD;
+	}
+	#btn-qr:hover{
+		background-color: #8e9bff;
 	}
 	.name-user{
+		display: block;
+	}
+	footer{
 		display: block;
 	}
 }
