@@ -7,5 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "koepeped",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@sweetalert2/theme-wordpress-admin": "^4.0.1",
+    "sweetalert2": "^10.10.0"
+  }
 }
